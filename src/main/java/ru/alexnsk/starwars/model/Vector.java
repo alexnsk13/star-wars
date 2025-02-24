@@ -14,16 +14,8 @@ public class Vector {
         return x;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
     public int getY() {
         return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
     }
 
     public static Vector plus(Vector v1, Vector v2) {
