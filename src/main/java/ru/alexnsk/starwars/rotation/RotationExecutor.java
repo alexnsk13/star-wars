@@ -2,7 +2,7 @@ package ru.alexnsk.starwars.rotation;
 
 public class RotationExecutor {
 
-    private static final int FULL_CIRCLE = 360;
+    public static final int FULL_CIRCLE = 360;
 
     private final Rotatable rotatable;
 

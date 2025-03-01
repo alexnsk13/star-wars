@@ -1,45 +1,36 @@
 package ru.alexnsk.starwars.rotation;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import ru.alexnsk.starwars.model.RotatableObject;
 
+import java.util.stream.Stream;
+
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
+import static ru.alexnsk.starwars.rotation.RotationExecutor.FULL_CIRCLE;
 
 public class RotationExecutorTest {
 
-    @Test
-    public void execute_WhenRotationAngleIsZero_DoNotChangeObjectAngle() {
-        var currentAngle = 24;
-        testExecute(currentAngle, 0, currentAngle);
-    }
+    private static final int TEST_INITIAL_ANGLE = 33;
 
-    @Test
-    public void execute_WhenRotationAngleIsMultiple360_DoNotChangeObjectAngle() {
-        var currentAngle = 33;
-        testExecute(currentAngle, 360, currentAngle);
-        testExecute(currentAngle, 360, currentAngle);
-    }
-
-    @Test
-    public void execute_WhenRotationAngleMoreThan360_Rotate() {
-        testExecute(43, 378, 61);
-    }
-
-    @Test
-    public void execute_WhenRotationAngleIsPositive_Rotate() {
-        testExecute(43, 90, 133);
-    }
-
-    @Test
-    public void execute_WhenRotatingAngleIsNegative_Rotate() {
-        testExecute(30, -90, 300);
-    }
-
-    private void testExecute(int currentAngle, int rotatedAngle, int expected) {
-        var rotatableObject = new RotatableObject(currentAngle);
+    @ParameterizedTest
+    @MethodSource("provideAnglesForExecute")
+    public void execute_WhenGivenAngle_ShouldRotateCorrectly(int angle, int expectedResult) {
+        var rotatableObject = new RotatableObject(TEST_INITIAL_ANGLE);
         var executor = new RotationExecutor(rotatableObject);
 
-        executor.execute(rotatedAngle);
-        assertThat(rotatableObject.getAngle()).isEqualTo(expected);
+        executor.execute(angle);
+        assertThat(rotatableObject.getAngle()).isEqualTo(expectedResult);
+    }
+
+    private static Stream<Arguments> provideAnglesForExecute() {
+        return Stream.of(
+                Arguments.of(0, TEST_INITIAL_ANGLE),
+                Arguments.of(FULL_CIRCLE, TEST_INITIAL_ANGLE),
+                Arguments.of(378, 51),
+                Arguments.of(90, 123),
+                Arguments.of(-90, 303)
+        );
     }
 }
