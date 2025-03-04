@@ -1,4 +1,4 @@
-package ru.alexnsk.starwars.movement;
+package ru.alexnsk.starwars.model;
 
 import ru.alexnsk.starwars.model.Vector;
 
