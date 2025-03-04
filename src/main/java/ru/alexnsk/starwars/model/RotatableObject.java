@@ -1,22 +1,27 @@
 package ru.alexnsk.starwars.model;
 
-import ru.alexnsk.starwars.rotation.Rotatable;
-
 public class RotatableObject implements Rotatable {
 
-    private int angle;
+    private int direction;
+    private int angularVelocity;
 
-    public RotatableObject(int angle) {
-        this.angle = angle;
+    public RotatableObject(int direction, int angularVelocity) {
+        this.direction = direction;
+        this.angularVelocity = angularVelocity;
     }
 
     @Override
-    public int getAngle() {
-        return angle;
+    public int getDirection() {
+        return direction;
     }
 
     @Override
-    public void setAngle(int angle) {
-        this.angle = angle;
+    public int getAngularVelocity() {
+        return angularVelocity;
+    }
+
+    @Override
+    public void setDirection(int direction) {
+        this.direction = direction;
     }
 }
