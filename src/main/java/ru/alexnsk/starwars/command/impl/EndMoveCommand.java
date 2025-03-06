@@ -6,6 +6,8 @@ import ru.alexnsk.starwars.model.UObject;
 
 import java.util.Queue;
 
+import static ru.alexnsk.starwars.enums.UObjectFieldName.VELOCITY;
+
 public class EndMoveCommand implements MoveCommandEndable, Command {
 
     private UObject movingObject;
@@ -21,7 +23,7 @@ public class EndMoveCommand implements MoveCommandEndable, Command {
 
     @Override
     public void execute() {
-        movingObject.removeObject("velocity");
+        movingObject.removeObject(VELOCITY.getName());
         commandQueue.remove(endableCommand);
     }
 

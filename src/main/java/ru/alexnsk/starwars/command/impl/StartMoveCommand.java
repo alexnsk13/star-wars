@@ -13,8 +13,7 @@ public class StartMoveCommand implements MoveCommandStartable, Command {
     private int velocity;
     private Queue<Command> commandQueue;
 
-    public StartMoveCommand(UObject movingObject, int velocity, Queue<Command> commandQueue)
-    {
+    public StartMoveCommand(UObject movingObject, int velocity, Queue<Command> commandQueue) {
         this.movingObject = movingObject;
         this.velocity = velocity;
         this.commandQueue = commandQueue;
