@@ -13,6 +13,8 @@ public class EndCommand implements Command {
 
     @Override
     public void execute() {
-        endable.getCommandQueue().remove(endable.getCommand());
+        if (endable.getCommand() instanceof BridgeCommand) {
+            ((BridgeCommand) endable.getCommand()).inject(new NoOpCommand());
+        }
     }
 }

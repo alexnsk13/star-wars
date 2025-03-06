@@ -13,7 +13,7 @@ public class StartCommand implements Command {
 
     @Override
     public void execute() {
-        var command = startable.createCommand();
+        var command = new BridgeCommand(startable.createCommand());
         startable.getCommandQueue().add(command);
     }
 }
