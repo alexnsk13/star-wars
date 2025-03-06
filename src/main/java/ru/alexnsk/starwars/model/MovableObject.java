@@ -1,7 +1,5 @@
 package ru.alexnsk.starwars.model;
 
-import ru.alexnsk.starwars.movement.Movable;
-
 public class MovableObject implements Movable {
 
     private Vector position;

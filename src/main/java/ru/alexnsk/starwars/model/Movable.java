@@ -1,6 +1,4 @@
-package ru.alexnsk.starwars.movement;
-
-import ru.alexnsk.starwars.model.Vector;
+package ru.alexnsk.starwars.model;
 
 public interface Movable {
 

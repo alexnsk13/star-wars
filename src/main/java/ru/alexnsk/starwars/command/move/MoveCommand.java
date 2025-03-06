@@ -1,15 +1,18 @@
-package ru.alexnsk.starwars.movement;
+package ru.alexnsk.starwars.command.move;
 
+import ru.alexnsk.starwars.command.Command;
 import ru.alexnsk.starwars.model.Vector;
+import ru.alexnsk.starwars.model.Movable;
 
-public class MovementExecutor {
+public class MoveCommand implements Command {
 
     private final Movable movable;
 
-    public MovementExecutor(Movable movable) {
+    public MoveCommand(Movable movable) {
         this.movable = movable;
     }
 
+    @Override
     public void execute() {
         var position = movable.getPosition();
         if (position == null) {
