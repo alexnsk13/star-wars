@@ -2,7 +2,9 @@ package ru.alexnsk.starwars.enums;
 
 public enum UObjectFieldName {
     VELOCITY("velocity"),
-    POSITION("position");
+    POSITION("position"),
+    DIRECTION("direction"),
+    ANGULAR_VELOCITY("angularVelocity");
 
     private final String name;
 

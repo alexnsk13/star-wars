@@ -3,12 +3,13 @@ package ru.alexnsk.starwars.command.impl;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import ru.alexnsk.starwars.command.rotate.RotateCommand;
 import ru.alexnsk.starwars.model.RotatableObject;
 
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static ru.alexnsk.starwars.command.impl.RotateCommand.FULL_CIRCLE;
+import static ru.alexnsk.starwars.command.rotate.RotateCommand.FULL_CIRCLE;
 
 public class RotateCommandTest {
 
