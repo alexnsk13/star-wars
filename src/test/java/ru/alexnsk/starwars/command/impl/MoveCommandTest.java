@@ -1,6 +1,7 @@
 package ru.alexnsk.starwars.command.impl;
 
 import org.junit.jupiter.api.Test;
+import ru.alexnsk.starwars.command.move.MoveCommand;
 import ru.alexnsk.starwars.model.MovableObject;
 import ru.alexnsk.starwars.model.Vector;
 
