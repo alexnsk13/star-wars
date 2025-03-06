@@ -11,12 +11,12 @@ public class RotatableObject implements Rotatable {
     }
 
     @Override
-    public int getDirection() {
+    public Integer getDirection() {
         return direction;
     }
 
     @Override
-    public int getAngularVelocity() {
+    public Integer getAngularVelocity() {
         return angularVelocity;
     }
 

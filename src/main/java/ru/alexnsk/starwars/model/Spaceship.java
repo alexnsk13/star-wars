@@ -16,9 +16,4 @@ public class Spaceship implements UObject {
     public void setObject(String key, Object value) {
         data.put(key, value);
     }
-
-    @Override
-    public void removeObject(String key) {
-        data.remove(key);
-    }
 }

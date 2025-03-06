@@ -7,6 +7,4 @@ public interface UObject extends Serializable {
     Object getObject(String key);
 
     void setObject(String key, Object value);
-
-    void removeObject(String key);
 }

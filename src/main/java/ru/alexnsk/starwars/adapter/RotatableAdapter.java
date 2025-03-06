@@ -15,12 +15,12 @@ public class RotatableAdapter implements Rotatable {
     }
 
     @Override
-    public int getDirection() {
+    public Integer getDirection() {
         return (Integer) uObject.getObject(DIRECTION.getName());
     }
 
     @Override
-    public int getAngularVelocity() {
+    public Integer getAngularVelocity() {
         return (Integer) uObject.getObject(ANGULAR_VELOCITY.getName());
     }
 
