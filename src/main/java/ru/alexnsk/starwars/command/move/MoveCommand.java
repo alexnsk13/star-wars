@@ -1,4 +1,4 @@
-package ru.alexnsk.starwars.command.impl;
+package ru.alexnsk.starwars.command.move;
 
 import ru.alexnsk.starwars.command.Command;
 import ru.alexnsk.starwars.model.Vector;

@@ -2,12 +2,12 @@ package ru.alexnsk.starwars.command;
 
 import ru.alexnsk.starwars.model.UObject;
 
-import java.util.Map;
 import java.util.Queue;
 
-public interface MoveCommandEndable {
+public interface Startable {
 
-    Command getMoveCommand();
     UObject getObject();
-    Queue<Command> getCommandsQueue();
+    int getVelocity();
+    Queue<Command> getCommandQueue();
+    Command createCommand();
 }

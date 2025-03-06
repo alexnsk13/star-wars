@@ -31,12 +31,12 @@ public class RotateStartable implements Startable {
     }
 
     @Override
-    public Queue<Command> getCommandsQueue() {
+    public Queue<Command> getCommandQueue() {
         return commandQueue;
     }
 
     @Override
-    public Command createCommand(UObject object, int value) {
+    public Command createCommand() {
         var changeVelocityCommand = new ChangeAngularVelocityCommand(object);
         changeVelocityCommand.setVelocity(velocity);
 
